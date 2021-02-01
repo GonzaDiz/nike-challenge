@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BC125C8896600AAAA7C /* AppDelegate.swift */; };
 		B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BC325C8896600AAAA7C /* SceneDelegate.swift */; };
-		B3055BC625C8896600AAAA7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BC525C8896600AAAA7C /* ViewController.swift */; };
-		B3055BC925C8896600AAAA7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3055BC725C8896600AAAA7C /* Main.storyboard */; };
+		B3055BC625C8896600AAAA7C /* TopAlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */; };
 		B3055BCB25C8896600AAAA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3055BCA25C8896600AAAA7C /* Assets.xcassets */; };
 		B3055BCE25C8896600AAAA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */; };
 		B3055BD925C8896700AAAA7C /* NikeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BD825C8896700AAAA7C /* NikeChallengeTests.swift */; };
@@ -38,8 +37,7 @@
 		B3055BBE25C8896600AAAA7C /* NikeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3055BC125C8896600AAAA7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3055BC325C8896600AAAA7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B3055BC525C8896600AAAA7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B3055BC825C8896600AAAA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsTableViewController.swift; sourceTree = "<group>"; };
 		B3055BCA25C8896600AAAA7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3055BCD25C8896600AAAA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3055BCF25C8896600AAAA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +97,10 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B3055C0925C89A0300AAAA7C /* TopAlbums */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
 				B3055BC325C8896600AAAA7C /* SceneDelegate.swift */,
-				B3055BC525C8896600AAAA7C /* ViewController.swift */,
-				B3055BC725C8896600AAAA7C /* Main.storyboard */,
+				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
 				B3055BCA25C8896600AAAA7C /* Assets.xcassets */,
 				B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */,
 				B3055BCF25C8896600AAAA7C /* Info.plist */,
@@ -126,6 +124,13 @@
 				B3055BE525C8896700AAAA7C /* Info.plist */,
 			);
 			path = NikeChallengeUITests;
+			sourceTree = "<group>";
+		};
+		B3055C0925C89A0300AAAA7C /* TopAlbums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TopAlbums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +238,6 @@
 			files = (
 				B3055BCE25C8896600AAAA7C /* LaunchScreen.storyboard in Resources */,
 				B3055BCB25C8896600AAAA7C /* Assets.xcassets in Resources */,
-				B3055BC925C8896600AAAA7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3055BC625C8896600AAAA7C /* ViewController.swift in Sources */,
+				B3055BC625C8896600AAAA7C /* TopAlbumsTableViewController.swift in Sources */,
 				B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */,
 				B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +300,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3055BC725C8896600AAAA7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3055BC825C8896600AAAA7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
