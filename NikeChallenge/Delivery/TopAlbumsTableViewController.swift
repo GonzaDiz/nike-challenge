@@ -11,6 +11,7 @@ final class TopAlbumsTableViewController: UITableViewController {
     
     private let viewModel: TopAlbumsViewModel
     private let cellIdentifier = "AlbumTableViewCell"
+    private let imageLoader = ImageLoader(placeholder: "album-placeholder", cacheCountLimit: 20)
 
     init(viewModel: TopAlbumsViewModel) {
         self.viewModel = viewModel
@@ -25,6 +26,7 @@ final class TopAlbumsTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        title = "Top Albums"
         viewModel.albums.bind { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -43,7 +45,13 @@ final class TopAlbumsTableViewController: UITableViewController {
             }
         
         let album = viewModel.albums.value[indexPath.row]
-        cell.setUp(name: album.name, artist: album.artist, thumbnailUrl: album.thumbnailUrl)
+        imageLoader.load(url: album.thumbnailUrl) { image in
+            if let cell = tableView.cellForRow(at: indexPath) as? AlbumTableViewCell {
+                cell.updateImage(image: image)
+            }
+        }
+        
+        cell.setUp(name: album.name, artist: album.artist)
         return cell
     }
 }

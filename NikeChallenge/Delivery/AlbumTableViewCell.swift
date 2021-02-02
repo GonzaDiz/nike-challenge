@@ -36,10 +36,13 @@ final class AlbumTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUp(name: String, artist: String, thumbnailUrl: URL) {
+    func setUp(name: String, artist: String) {
         nameLabel.text = name
         artistLabel.text = artist
-        thumbnail.load(url: thumbnailUrl)
+    }
+    
+    func updateImage(image: UIImage) {
+        thumbnail.image = image
     }
     
     private func setUpConstraints() {
