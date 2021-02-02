@@ -97,10 +97,9 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				B3055C0925C89A0300AAAA7C /* TopAlbums */,
+				B3055C0925C89A0300AAAA7C /* Delivery */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
 				B3055BC325C8896600AAAA7C /* SceneDelegate.swift */,
-				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
 				B3055BCA25C8896600AAAA7C /* Assets.xcassets */,
 				B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */,
 				B3055BCF25C8896600AAAA7C /* Info.plist */,
@@ -126,11 +125,12 @@
 			path = NikeChallengeUITests;
 			sourceTree = "<group>";
 		};
-		B3055C0925C89A0300AAAA7C /* TopAlbums */ = {
+		B3055C0925C89A0300AAAA7C /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
 			);
-			path = TopAlbums;
+			path = Delivery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
