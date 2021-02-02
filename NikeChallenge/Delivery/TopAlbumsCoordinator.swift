@@ -22,6 +22,21 @@ final class TopAlbumsCoordinator: Coordinator {
         let service = DefaultTopAlbumsService(client: HTTPClient())
         let viewModel = TopAlbumsViewModel(topAlbumsService: service)
         let viewController = TopAlbumsTableViewController(viewModel: viewModel)
+        viewController.delegate = self
         navigationController.pushViewController(viewController, animated: false)
+    }
+    
+    func goToAlbumDetail(album: Album) {
+        let viewModel = AlbumDetailViewModel(album: album)
+        let viewController = AlbumDetailViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - TopAlbumsViewControllerDelegate
+
+extension TopAlbumsCoordinator: TopAlbumsViewControllerDelegate {
+    func didSelectAlbum(album: Album) {
+        goToAlbumDetail(album: album)
     }
 }

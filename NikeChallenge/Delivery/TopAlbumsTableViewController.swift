@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol TopAlbumsViewControllerDelegate: AnyObject {
+    func didSelectAlbum(album: Album)
+}
+
 final class TopAlbumsTableViewController: UITableViewController {
+    
+    weak var delegate: TopAlbumsViewControllerDelegate?
     
     private let viewModel: TopAlbumsViewModel
     private let cellIdentifier = "AlbumTableViewCell"
@@ -53,5 +59,10 @@ final class TopAlbumsTableViewController: UITableViewController {
         
         cell.setUp(name: album.name, artist: album.artist)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let album = viewModel.albums.value[indexPath.row]
+        delegate?.didSelectAlbum(album: album)
     }
 }

@@ -51,10 +51,10 @@ final class AlbumTableViewCell: UITableViewCell {
         addSubview(thumbnail)
         
         NSLayoutConstraint.activate([
-            thumbnail.widthAnchor.constraint(equalToConstant: 90),
-            thumbnail.heightAnchor.constraint(equalToConstant: 90),
+            thumbnail.widthAnchor.constraint(equalToConstant: 120),
+            thumbnail.heightAnchor.constraint(equalToConstant: 120),
             thumbnail.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            thumbnail.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            thumbnail.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16),
             thumbnail.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
         
@@ -63,12 +63,11 @@ final class AlbumTableViewCell: UITableViewCell {
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
         ])
-        
+
         NSLayoutConstraint.activate([
             artistLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             artistLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             artistLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8)
-        ])
-            
+        ])            
     }
 }
