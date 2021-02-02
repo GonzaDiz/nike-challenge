@@ -10,6 +10,7 @@ import UIKit
 final class TopAlbumsTableViewController: UITableViewController {
     
     private let viewModel: TopAlbumsViewModel
+    private let cellIdentifier = "AlbumTableViewCell"
 
     init(viewModel: TopAlbumsViewModel) {
         self.viewModel = viewModel
@@ -23,9 +24,26 @@ final class TopAlbumsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        viewModel.albums.bind { albums in
-            
+        tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        viewModel.albums.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
         viewModel.viewIsLoaded()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.albums.value.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AlbumTableViewCell else {
+                return UITableViewCell()
+            }
+        
+        let album = viewModel.albums.value[indexPath.row]
+        cell.setUp(name: album.name, artist: album.artist, thumbnailUrl: album.thumbnailUrl)
+        return cell
     }
 }

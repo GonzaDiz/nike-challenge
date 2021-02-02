@@ -32,7 +32,7 @@ struct DefaultTopAlbumsService: TopAlbumsService {
     
     private func mapAlbumDTO(_ dto: AlbumDTO) -> Album {
         return Album(
-            name: dto.artistName,
+            name: dto.name,
             artist: dto.artistName,
             thumbnailUrl: dto.thumbnailUrl)
     }

@@ -25,6 +25,8 @@
 		B33977E525C8E68D004BE4AD /* TopAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */; };
 		B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */; };
 		B33977F025C8EC2C004BE4AD /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977EF25C8EC2C004BE4AD /* Bindable.swift */; };
+		B33977F825C8F4B7004BE4AD /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977F725C8F4B7004BE4AD /* AlbumTableViewCell.swift */; };
+		B339781925C8FD8B004BE4AD /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339781825C8FD8B004BE4AD /* UIImageView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewModel.swift; sourceTree = "<group>"; };
 		B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsCoordinator.swift; sourceTree = "<group>"; };
 		B33977EF25C8EC2C004BE4AD /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		B33977F725C8F4B7004BE4AD /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		B339781825C8FD8B004BE4AD /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B339781725C8FD63004BE4AD /* Extensions */,
 				B3055BCF25C8896600AAAA7C /* Info.plist */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
 				B3055BC325C8896600AAAA7C /* SceneDelegate.swift */,
@@ -156,6 +161,7 @@
 				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
 				B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */,
 				B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */,
+				B33977F725C8F4B7004BE4AD /* AlbumTableViewCell.swift */,
 			);
 			path = Delivery;
 			sourceTree = "<group>";
@@ -220,6 +226,14 @@
 				B33977DF25C8D91C004BE4AD /* Endpoint.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B339781725C8FD63004BE4AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B339781825C8FD8B004BE4AD /* UIImageView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,8 @@
 				B3055BC625C8896600AAAA7C /* TopAlbumsTableViewController.swift in Sources */,
 				B33977CA25C8D23F004BE4AD /* TopAlbumsRequest.swift in Sources */,
 				B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */,
+				B33977F825C8F4B7004BE4AD /* AlbumTableViewCell.swift in Sources */,
+				B339781925C8FD8B004BE4AD /* UIImageView+.swift in Sources */,
 				B33977F025C8EC2C004BE4AD /* Bindable.swift in Sources */,
 				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
 				B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */,
