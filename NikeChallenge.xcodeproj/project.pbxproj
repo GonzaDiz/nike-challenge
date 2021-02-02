@@ -14,6 +14,8 @@
 		B3055BCE25C8896600AAAA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */; };
 		B3055BD925C8896700AAAA7C /* NikeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BD825C8896700AAAA7C /* NikeChallengeTests.swift */; };
 		B3055BE425C8896700AAAA7C /* NikeChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3055BE325C8896700AAAA7C /* NikeChallengeUITests.swift */; };
+		B33977B525C8CF7B004BE4AD /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977B425C8CF7B004BE4AD /* FeedDTO.swift */; };
+		B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977B925C8CFE2004BE4AD /* AlbumDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B3055BDF25C8896700AAAA7C /* NikeChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikeChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3055BE325C8896700AAAA7C /* NikeChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikeChallengeUITests.swift; sourceTree = "<group>"; };
 		B3055BE525C8896700AAAA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33977B425C8CF7B004BE4AD /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
+		B33977B925C8CFE2004BE4AD /* AlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 		B33977B325C8CF49004BE4AD /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				B33977B425C8CF7B004BE4AD /* FeedDTO.swift */,
+				B33977B925C8CFE2004BE4AD /* AlbumDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -304,7 +310,9 @@
 			files = (
 				B3055BC625C8896600AAAA7C /* TopAlbumsTableViewController.swift in Sources */,
 				B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */,
+				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
 				B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */,
+				B33977B525C8CF7B004BE4AD /* FeedDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
