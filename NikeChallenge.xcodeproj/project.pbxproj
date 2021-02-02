@@ -24,6 +24,7 @@
 		B33977E025C8D91C004BE4AD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977DF25C8D91C004BE4AD /* Endpoint.swift */; };
 		B33977E525C8E68D004BE4AD /* TopAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */; };
 		B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */; };
+		B33977F025C8EC2C004BE4AD /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977EF25C8EC2C004BE4AD /* Bindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		B33977DF25C8D91C004BE4AD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewModel.swift; sourceTree = "<group>"; };
 		B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsCoordinator.swift; sourceTree = "<group>"; };
+		B33977EF25C8EC2C004BE4AD /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				B33977B025C8CF3A004BE4AD /* Domain */,
 				B33977AF25C8CF30004BE4AD /* Infrastructure */,
 				B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */,
+				B33977EF25C8EC2C004BE4AD /* Bindable.swift */,
 			);
 			path = NikeChallenge;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				B3055BC625C8896600AAAA7C /* TopAlbumsTableViewController.swift in Sources */,
 				B33977CA25C8D23F004BE4AD /* TopAlbumsRequest.swift in Sources */,
 				B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */,
+				B33977F025C8EC2C004BE4AD /* Bindable.swift in Sources */,
 				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
 				B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */,
 				B33977BF25C8D0B6004BE4AD /* TopAlbumsService.swift in Sources */,

@@ -12,11 +12,11 @@ final class TopAlbumsViewModel {
     private let topAlbumsQuantity = 100
     
     private let topAlbumsService: TopAlbumsService
-    var albums: Dynamic<[Album]>
+    var albums: Bindable<[Album]>
     
     init(topAlbumsService: TopAlbumsService) {
         self.topAlbumsService = topAlbumsService
-        self.albums = Dynamic([])
+        self.albums = Bindable([])
     }
     
     func viewIsLoaded() {
@@ -29,29 +29,5 @@ final class TopAlbumsViewModel {
             }
             
         }
-    }
-}
-
-class Dynamic<T> {
-    typealias Listener = (T) -> Void
-    var listener: Listener?
-    
-    func bind(listener: Listener?) {
-        self.listener = listener
-    }
-    
-    func bindAndFire(listener: Listener?) {
-        self.listener = listener
-        listener?(value)
-    }
-    
-    var value: T {
-        didSet {
-            listener?(value)
-        }
-    }
-    
-    init(_ varible: T) {
-        value = varible
     }
 }
