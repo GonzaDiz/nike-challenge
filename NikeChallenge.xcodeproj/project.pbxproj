@@ -97,12 +97,14 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				B3055C0925C89A0300AAAA7C /* Delivery */,
+				B3055BCF25C8896600AAAA7C /* Info.plist */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
 				B3055BC325C8896600AAAA7C /* SceneDelegate.swift */,
 				B3055BCA25C8896600AAAA7C /* Assets.xcassets */,
+				B3055C0925C89A0300AAAA7C /* Delivery */,
+				B33977B025C8CF3A004BE4AD /* Domain */,
+				B33977AF25C8CF30004BE4AD /* Infrastructure */,
 				B3055BCC25C8896600AAAA7C /* LaunchScreen.storyboard */,
-				B3055BCF25C8896600AAAA7C /* Info.plist */,
 			);
 			path = NikeChallenge;
 			sourceTree = "<group>";
@@ -131,6 +133,44 @@
 				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
 			);
 			path = Delivery;
+			sourceTree = "<group>";
+		};
+		B33977AF25C8CF30004BE4AD /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B33977B325C8CF49004BE4AD /* DTO */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		B33977B025C8CF3A004BE4AD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B33977B125C8CF3F004BE4AD /* Model */,
+				B33977B225C8CF45004BE4AD /* Service */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B33977B125C8CF3F004BE4AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B33977B225C8CF45004BE4AD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B33977B325C8CF49004BE4AD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
