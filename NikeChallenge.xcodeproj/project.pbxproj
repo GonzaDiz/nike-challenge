@@ -22,6 +22,8 @@
 		B33977D225C8D451004BE4AD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977D125C8D451004BE4AD /* Client.swift */; };
 		B33977D825C8D914004BE4AD /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977D725C8D914004BE4AD /* HTTPRequest.swift */; };
 		B33977E025C8D91C004BE4AD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977DF25C8D91C004BE4AD /* Endpoint.swift */; };
+		B33977E525C8E68D004BE4AD /* TopAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */; };
+		B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B33977D125C8D451004BE4AD /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		B33977D725C8D914004BE4AD /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		B33977DF25C8D91C004BE4AD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewModel.swift; sourceTree = "<group>"; };
+		B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				B3055BC525C8896600AAAA7C /* TopAlbumsTableViewController.swift */,
+				B33977E425C8E68D004BE4AD /* TopAlbumsViewModel.swift */,
+				B33977E925C8E6D8004BE4AD /* TopAlbumsCoordinator.swift */,
 			);
 			path = Delivery;
 			sourceTree = "<group>";
@@ -346,8 +352,10 @@
 				B33977CA25C8D23F004BE4AD /* TopAlbumsRequest.swift in Sources */,
 				B3055BC225C8896600AAAA7C /* AppDelegate.swift in Sources */,
 				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
+				B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */,
 				B33977BF25C8D0B6004BE4AD /* TopAlbumsService.swift in Sources */,
 				B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */,
+				B33977E525C8E68D004BE4AD /* TopAlbumsViewModel.swift in Sources */,
 				B33977C425C8D0C7004BE4AD /* Album.swift in Sources */,
 				B33977D825C8D914004BE4AD /* HTTPRequest.swift in Sources */,
 				B33977B525C8CF7B004BE4AD /* FeedDTO.swift in Sources */,

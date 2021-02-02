@@ -10,14 +10,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var coordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationVC = UINavigationController()
-        window?.rootViewController = navigationVC
-        navigationVC.pushViewController(TopAlbumsTableViewController(), animated: false)
+        let navigationViewController = UINavigationController()
+        window?.rootViewController = navigationViewController
+        coordinator = TopAlbumsCoordinator(navigationController: navigationViewController)
+        coordinator?.start()
         window?.makeKeyAndVisible()
     }
 

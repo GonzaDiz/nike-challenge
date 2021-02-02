@@ -7,9 +7,12 @@
 
 import UIKit
 
-class TopAlbumsTableViewController: UITableViewController {
+final class TopAlbumsTableViewController: UITableViewController {
+    
+    private let viewModel: TopAlbumsViewModel
 
-    init() {
+    init(viewModel: TopAlbumsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -20,5 +23,9 @@ class TopAlbumsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel.albums.bind { albums in
+            
+        }
+        viewModel.viewIsLoaded()
     }
 }
