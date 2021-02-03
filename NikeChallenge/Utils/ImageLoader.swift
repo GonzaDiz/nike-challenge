@@ -14,7 +14,7 @@ final class ImageLoader {
     
     private let fiftyMegaBytes = 1024 * 1024 * 50
     private var cache: NSCache<NSString, UIImage>
-    private var task: URLSessionDownloadTask?
+    private var task: URLSessionDataTask?
     private let placeholder: String
     
     init(placeholder: String, cacheCountLimit: Int = 100) {
@@ -36,8 +36,8 @@ final class ImageLoader {
     }
     
     private func fetch(from url: URL, completion: @escaping (UIImage) -> Void) {
-        task = URLSession.shared.downloadTask(with: url) { [weak self] (data, response, error) in
-            if let data = try? Data(contentsOf: url),
+        task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            if let data = data,
                let image = UIImage(data: data) {
                 self?.cache.setObject(image, forKey: url.absoluteString as NSString, cost: data.count)
                 DispatchQueue.main.async {
