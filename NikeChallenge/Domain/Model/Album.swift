@@ -11,4 +11,8 @@ struct Album {
     let name: String
     let artist: String
     let thumbnailUrl: URL
+    let genres: [Genre]
+    let releaseDate: String
+    let copyright: String
+    let itunesUrl: URL
 }

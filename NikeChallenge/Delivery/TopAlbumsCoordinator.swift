@@ -29,7 +29,9 @@ final class TopAlbumsCoordinator: Coordinator {
     func goToAlbumDetail(album: Album) {
         let viewModel = AlbumDetailViewModel(album: album)
         let viewController = AlbumDetailViewController(viewModel: viewModel)
+        viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
+        
     }
 }
 
@@ -38,5 +40,13 @@ final class TopAlbumsCoordinator: Coordinator {
 extension TopAlbumsCoordinator: TopAlbumsViewControllerDelegate {
     func didSelectAlbum(album: Album) {
         goToAlbumDetail(album: album)
+    }
+}
+
+// MARK: - AlbumDetailViewControllerDelegate
+
+extension TopAlbumsCoordinator: AlbumDetailViewControllerDelegate {
+    func didTapMusicButton(url: URL) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

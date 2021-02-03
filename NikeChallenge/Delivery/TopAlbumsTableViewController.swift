@@ -17,7 +17,7 @@ final class TopAlbumsTableViewController: UITableViewController {
     
     private let viewModel: TopAlbumsViewModel
     private let cellIdentifier = "AlbumTableViewCell"
-    private let imageLoader = ImageLoader(placeholder: "album-placeholder", cacheCountLimit: 20)
+    private let imageLoader = ImageLoader(placeholder: "album-placeholder")
 
     init(viewModel: TopAlbumsViewModel) {
         self.viewModel = viewModel
@@ -30,7 +30,7 @@ final class TopAlbumsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         title = "Top Albums"
         viewModel.albums.bind { [weak self] _ in

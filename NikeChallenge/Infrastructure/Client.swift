@@ -14,7 +14,7 @@ class HTTPClient {
         case couldNotRetrieveData
     }
     
-    func execute<T: Decodable>(request: HTTPRequest, completion: @escaping (Result<T?, Error>) -> Void) {
+    func execute(request: HTTPRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         guard let url = request.endpoint.url else {
             completion(.failure(HTTPClientError.couldNotBuildUrlError))
             return
@@ -25,9 +25,7 @@ class HTTPClient {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
-                let jsonDecoder = JSONDecoder()
-                let decodedValue = try? jsonDecoder.decode(T.self, from: data)
-                completion(.success(decodedValue))
+                completion(.success(data))
             } else {
                 completion(.failure(HTTPClientError.couldNotRetrieveData))
             }

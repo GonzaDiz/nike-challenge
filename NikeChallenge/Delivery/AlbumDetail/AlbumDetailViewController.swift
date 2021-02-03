@@ -7,12 +7,28 @@
 
 import UIKit
 
+protocol AlbumDetailViewControllerDelegate: AnyObject {
+    func didTapMusicButton(url: URL)
+}
+
 final class AlbumDetailViewController: UIViewController {
     
+    weak var delegate: AlbumDetailViewControllerDelegate?
+    
     private let viewModel: AlbumDetailViewModel
+    private let imageLoader: ImageLoader = ImageLoader(
+        placeholder: "album-placeholder"
+    )
     
     private lazy var albumDetailView: AlbumDetailView = {
-        AlbumDetailView()
+        let view = AlbumDetailView(
+            albumName: viewModel.albumName,
+            copyright: viewModel.copyright,
+            artist: viewModel.artist,
+            genres: viewModel.genres,
+            releaseDate: viewModel.releaseDate
+        )
+        return view
     }()
     
     init(viewModel: AlbumDetailViewModel) {
@@ -26,5 +42,20 @@ final class AlbumDetailViewController: UIViewController {
     
     override func loadView() {
         view = albumDetailView
+        
+        imageLoader.load(url: viewModel.albumImageUrl) { [weak self] image in
+            self?.albumDetailView.updateAlbumImageView(with: image)
+        }
+        
+        albumDetailView.ctaButton.addTarget(
+            self,
+            action: #selector(didTapMusicButton),
+            for: .touchUpInside
+        )
+    }
+    
+    @objc
+    func didTapMusicButton() {
+        delegate?.didTapMusicButton(url: viewModel.itunesUrl)
     }
 }

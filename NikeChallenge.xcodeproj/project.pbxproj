@@ -30,6 +30,8 @@
 		B365365325C9EDCD00EB66F5 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365365225C9EDCD00EB66F5 /* AlbumDetailViewController.swift */; };
 		B365365B25C9EE5100EB66F5 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365365A25C9EE5100EB66F5 /* AlbumDetailViewModel.swift */; };
 		B365366025C9F0C900EB66F5 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */; };
+		B365366525C9F3F400EB66F5 /* GenreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365366425C9F3F400EB66F5 /* GenreDTO.swift */; };
+		B365366A25C9F42E00EB66F5 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365366925C9F42E00EB66F5 /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		B365365225C9EDCD00EB66F5 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		B365365A25C9EE5100EB66F5 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
+		B365366425C9F3F400EB66F5 /* GenreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDTO.swift; sourceTree = "<group>"; };
+		B365366925C9F42E00EB66F5 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B382DDCD25CA1E17009C3682 /* Extensions */,
 				B339782025C9D1BD004BE4AD /* Utils */,
 				B3055BCF25C8896600AAAA7C /* Info.plist */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B33977C325C8D0C7004BE4AD /* Album.swift */,
+				B365366925C9F42E00EB66F5 /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			children = (
 				B33977B425C8CF7B004BE4AD /* FeedDTO.swift */,
 				B33977B925C8CFE2004BE4AD /* AlbumDTO.swift */,
+				B365366425C9F3F400EB66F5 /* GenreDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -251,6 +258,13 @@
 				B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */,
 			);
 			path = AlbumDetail;
+			sourceTree = "<group>";
+		};
+		B382DDCD25CA1E17009C3682 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,9 +402,11 @@
 				B33977F825C8F4B7004BE4AD /* AlbumTableViewCell.swift in Sources */,
 				B33977F025C8EC2C004BE4AD /* Bindable.swift in Sources */,
 				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
+				B365366A25C9F42E00EB66F5 /* Genre.swift in Sources */,
 				B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */,
 				B33977BF25C8D0B6004BE4AD /* TopAlbumsService.swift in Sources */,
 				B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */,
+				B365366525C9F3F400EB66F5 /* GenreDTO.swift in Sources */,
 				B33977E525C8E68D004BE4AD /* TopAlbumsViewModel.swift in Sources */,
 				B339782225C9D1C9004BE4AD /* ImageLoader.swift in Sources */,
 				B365365B25C9EE5100EB66F5 /* AlbumDetailViewModel.swift in Sources */,
@@ -498,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -553,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

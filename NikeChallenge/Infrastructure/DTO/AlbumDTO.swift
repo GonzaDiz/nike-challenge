@@ -13,9 +13,17 @@ struct AlbumDTO: Decodable {
         case name
         case artistName
         case thumbnailUrl = "artworkUrl100"
+        case genres
+        case releaseDate
+        case copyright
+        case url
     }
     
     let name: String
     let artistName: String
     let thumbnailUrl: URL
+    let genres: [GenreDTO]
+    let releaseDate: String
+    let copyright: String
+    let url: URL
 }

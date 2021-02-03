@@ -12,13 +12,15 @@ import UIKit
 // TODO: Better cache policy, image compression.
 final class ImageLoader {
     
+    private let fiftyMegaBytes = 1024 * 1024 * 50
     private var cache: NSCache<NSString, UIImage>
     private var task: URLSessionDownloadTask?
     private let placeholder: String
     
-    init(placeholder: String, cacheCountLimit: Int) {
+    init(placeholder: String, cacheCountLimit: Int = 100) {
         self.cache = NSCache<NSString, UIImage>()
         cache.countLimit = cacheCountLimit
+        cache.totalCostLimit = fiftyMegaBytes
         self.placeholder = placeholder
     }
     
@@ -37,7 +39,7 @@ final class ImageLoader {
         task = URLSession.shared.downloadTask(with: url) { [weak self] (data, response, error) in
             if let data = try? Data(contentsOf: url),
                let image = UIImage(data: data) {
-                self?.cache.setObject(image, forKey: url.absoluteString as NSString)
+                self?.cache.setObject(image, forKey: url.absoluteString as NSString, cost: data.count)
                 DispatchQueue.main.async {
                     completion(image)
                 }

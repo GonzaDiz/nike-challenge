@@ -19,9 +19,11 @@ struct DefaultTopAlbumsService: TopAlbumsService {
     }
         
     func getTopAlbums(quantity: Int, completion: @escaping (Result<[Album], Error>) -> Void) {
-        client.execute(request: TopAlbumsRequest(quantity: quantity)) { (result: Result<FeedDTO?, Error>) in
+        client.execute(request: TopAlbumsRequest(quantity: quantity)) { (result: Result<Data, Error>) in
             switch result {
-            case .success(let feed):
+            case .success(let data):
+                let jsonDecoder = JSONDecoder()
+                let feed = try? jsonDecoder.decode(FeedDTO.self, from: data)
                 let albums = feed?.albums.compactMap { mapAlbumDTO($0) } ?? []
                 completion(.success(albums))
             case .failure(let error):
@@ -34,6 +36,14 @@ struct DefaultTopAlbumsService: TopAlbumsService {
         return Album(
             name: dto.name,
             artist: dto.artistName,
-            thumbnailUrl: dto.thumbnailUrl)
+            thumbnailUrl: dto.thumbnailUrl,
+            genres: dto.genres.map { mapGenreDTO($0) },
+            releaseDate: dto.releaseDate,
+            copyright: dto.copyright,
+            itunesUrl: dto.url)
+    }
+    
+    private func mapGenreDTO(_ dto: GenreDTO) -> Genre {
+        return Genre(name: dto.name)
     }
 }
