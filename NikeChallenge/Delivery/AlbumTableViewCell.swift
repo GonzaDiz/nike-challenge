@@ -12,12 +12,16 @@ final class AlbumTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .label
         return label
     }()
     
     lazy var artistLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.textColor = .secondaryLabel
         return label
     }()
     
@@ -61,7 +65,7 @@ final class AlbumTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: thumbnail.trailingAnchor, constant: 8),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            nameLabel.topAnchor.constraint(equalTo: thumbnail.topAnchor, constant: 8),
         ])
 
         NSLayoutConstraint.activate([
