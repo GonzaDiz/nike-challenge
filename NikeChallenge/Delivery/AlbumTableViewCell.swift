@@ -9,7 +9,7 @@ import UIKit
 
 final class AlbumTableViewCell: UITableViewCell {
     
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .semibold)
@@ -17,7 +17,7 @@ final class AlbumTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var artistLabel: UILabel = {
+    private lazy var artistLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16, weight: .regular)
@@ -25,7 +25,7 @@ final class AlbumTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var thumbnail: UIImageView = {
+    private lazy var thumbnail: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -50,10 +50,12 @@ final class AlbumTableViewCell: UITableViewCell {
     }
     
     private func setUpConstraints() {
-        addSubview(nameLabel)
-        addSubview(artistLabel)
-        addSubview(thumbnail)
-        
+        addSubviews([
+            nameLabel,
+            artistLabel,
+            thumbnail
+        ])
+
         NSLayoutConstraint.activate([
             thumbnail.widthAnchor.constraint(equalToConstant: 120),
             thumbnail.heightAnchor.constraint(equalToConstant: 120),

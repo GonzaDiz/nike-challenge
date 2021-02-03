@@ -12,7 +12,12 @@ final class TopAlbumsViewModel {
     private let topAlbumsQuantity = 100
     
     private let topAlbumsService: TopAlbumsService
-    var albums: Bindable<[Album]>
+    private(set) var albums: Bindable<[Album]>
+    private(set) var errorMessage: Bindable<String> = Bindable("")
+    
+    var albumsCount: Int {
+        albums.value.count
+    }
     
     init(topAlbumsService: TopAlbumsService) {
         self.topAlbumsService = topAlbumsService
@@ -25,9 +30,12 @@ final class TopAlbumsViewModel {
             case .success(let albums):
                 self?.albums.value = albums
             case .failure:
-                print("Show Error Screen")
+                self?.errorMessage.value = "Something went wrong"
             }
-            
         }
+    }
+    
+    func getAlbum(at index: Int) -> Album? {
+        albums.value.indices.contains(index) ? albums.value[index] : nil
     }
 }

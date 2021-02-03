@@ -33,24 +33,20 @@ final class TopAlbumsTableViewController: UITableViewController {
         view.backgroundColor = .systemBackground
         tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         title = "Top Albums"
-        viewModel.albums.bind { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        setupBindings()
         viewModel.viewIsLoaded()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.albums.value.count
+        viewModel.albumsCount
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AlbumTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AlbumTableViewCell,
+              let album = viewModel.getAlbum(at: indexPath.row) else {
                 return UITableViewCell()
             }
         
-        let album = viewModel.albums.value[indexPath.row]
         imageLoader.load(url: album.thumbnailUrl) { image in
             if let cell = tableView.cellForRow(at: indexPath) as? AlbumTableViewCell {
                 cell.updateImage(image: image)
@@ -62,7 +58,24 @@ final class TopAlbumsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let album = viewModel.albums.value[indexPath.row]
-        delegate?.didSelectAlbum(album: album)
+        if let album = viewModel.getAlbum(at: indexPath.row) {
+            delegate?.didSelectAlbum(album: album)
+        }
+    }
+    
+    private func setupBindings() {
+        viewModel.albums.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.errorMessage.bind { [weak self] errorMessage in
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 }

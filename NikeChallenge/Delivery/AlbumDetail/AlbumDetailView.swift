@@ -16,7 +16,7 @@ final class AlbumDetailView: UIView {
         return imageView
     }()
     
-    private lazy var albumName: UILabel = {
+    lazy var albumNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -52,7 +52,7 @@ final class AlbumDetailView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .regular)
         label.textColor = .tertiaryLabel
         return label
     }()
@@ -74,9 +74,9 @@ final class AlbumDetailView: UIView {
         releaseDate: String
     ) {
         super.init(frame: .zero)
-        setupConstraints()
-        self.albumName.text = albumName
         backgroundColor = .systemBackground
+        addSubviews()
+        setupAlbumName(albumName: albumName)
         setupArtistLabel(artist: artist)
         setupGenresLabel(genres: genres)
         setupReleaseDateLabel(date: releaseDate)
@@ -89,14 +89,25 @@ final class AlbumDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupConstraints() {
-        addSubview(albumImage)
-        addSubview(albumName)
-                
+    private func addSubviews() {
+        addSubviews([
+            albumImage,
+            albumNameLabel,
+            artistLabel,
+            releaseDateLabel,
+            genresLabel,
+            copyrightLabel,
+            ctaButton
+        ])
+    }
+    
+    private func setupAlbumName(albumName: String) {
+        albumNameLabel.text = albumName
+
         NSLayoutConstraint.activate([
-            albumName.topAnchor.constraint(equalTo: albumImage.bottomAnchor, constant: 16),
-            albumName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            albumName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            albumNameLabel.topAnchor.constraint(equalTo: albumImage.bottomAnchor, constant: 16),
+            albumNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            albumNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
     
@@ -110,41 +121,36 @@ final class AlbumDetailView: UIView {
     }
     
     private func setupArtistLabel(artist: String) {
-        addSubview(artistLabel)
         artistLabel.text = artist
         
         NSLayoutConstraint.activate([
-            artistLabel.topAnchor.constraint(equalTo: albumName.bottomAnchor, constant: 10),
-            artistLabel.leadingAnchor.constraint(equalTo: albumName.leadingAnchor),
-            artistLabel.trailingAnchor.constraint(equalTo: albumName.trailingAnchor)
+            artistLabel.topAnchor.constraint(equalTo: albumNameLabel.bottomAnchor, constant: 10),
+            artistLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
+            artistLabel.trailingAnchor.constraint(equalTo: albumNameLabel.trailingAnchor)
         ])
     }
     
     private func setupGenresLabel(genres: String) {
-        addSubview(genresLabel)
         genresLabel.text = genres
         
         NSLayoutConstraint.activate([
             genresLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: 10),
-            genresLabel.leadingAnchor.constraint(equalTo: albumName.leadingAnchor),
-            genresLabel.trailingAnchor.constraint(equalTo: albumName.trailingAnchor)
+            genresLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
+            genresLabel.trailingAnchor.constraint(equalTo: albumNameLabel.trailingAnchor)
         ])
     }
     
     private func setupReleaseDateLabel(date: String) {
-        addSubview(releaseDateLabel)
         releaseDateLabel.text = date
         
         NSLayoutConstraint.activate([
             releaseDateLabel.topAnchor.constraint(equalTo: genresLabel.bottomAnchor, constant: 10),
-            releaseDateLabel.leadingAnchor.constraint(equalTo: albumName.leadingAnchor),
-            releaseDateLabel.trailingAnchor.constraint(equalTo: albumName.trailingAnchor)
+            releaseDateLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
+            releaseDateLabel.trailingAnchor.constraint(equalTo: albumNameLabel.trailingAnchor)
         ])
     }
     
     private func setupCopyrightLabel(copyright: String) {
-        addSubview(copyrightLabel)
-
         copyrightLabel.text = copyright
 
         NSLayoutConstraint.activate([
@@ -155,8 +161,6 @@ final class AlbumDetailView: UIView {
     }
     
     private func setupCtaButton() {
-        addSubview(ctaButton)
-        
         NSLayoutConstraint.activate([
             ctaButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             ctaButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),

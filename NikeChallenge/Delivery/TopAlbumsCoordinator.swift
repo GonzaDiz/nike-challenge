@@ -31,7 +31,6 @@ final class TopAlbumsCoordinator: Coordinator {
         let viewController = AlbumDetailViewController(viewModel: viewModel)
         viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
-        
     }
 }
 

@@ -32,6 +32,8 @@
 		B365366025C9F0C900EB66F5 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */; };
 		B365366525C9F3F400EB66F5 /* GenreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365366425C9F3F400EB66F5 /* GenreDTO.swift */; };
 		B365366A25C9F42E00EB66F5 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365366925C9F42E00EB66F5 /* Genre.swift */; };
+		B382DDDE25CA27C8009C3682 /* TopAlbumsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382DDDD25CA27C8009C3682 /* TopAlbumsViewModelTests.swift */; };
+		B3CF468025CA3E9E00E43646 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CF467F25CA3E9E00E43646 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		B365366425C9F3F400EB66F5 /* GenreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDTO.swift; sourceTree = "<group>"; };
 		B365366925C9F42E00EB66F5 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		B382DDDD25CA27C8009C3682 /* TopAlbumsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewModelTests.swift; sourceTree = "<group>"; };
+		B3CF467F25CA3E9E00E43646 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		B3055BC025C8896600AAAA7C /* NikeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B3CF467E25CA3E9300E43646 /* Extensions */,
 				B3055BCF25C8896600AAAA7C /* Info.plist */,
 				B3055BC125C8896600AAAA7C /* AppDelegate.swift */,
 				B33977EF25C8EC2C004BE4AD /* Bindable.swift */,
@@ -150,6 +155,7 @@
 		B3055BD725C8896700AAAA7C /* NikeChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				B382DDD925CA2745009C3682 /* Delivery */,
 				B3055BD825C8896700AAAA7C /* NikeChallengeTests.swift */,
 				B3055BDA25C8896700AAAA7C /* Info.plist */,
 			);
@@ -257,6 +263,22 @@
 				B365365F25C9F0C900EB66F5 /* AlbumDetailView.swift */,
 			);
 			path = AlbumDetail;
+			sourceTree = "<group>";
+		};
+		B382DDD925CA2745009C3682 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				B382DDDD25CA27C8009C3682 /* TopAlbumsViewModelTests.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
+		B3CF467E25CA3E9300E43646 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3CF467F25CA3E9E00E43646 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +418,7 @@
 				B33977BA25C8CFE2004BE4AD /* AlbumDTO.swift in Sources */,
 				B365366A25C9F42E00EB66F5 /* Genre.swift in Sources */,
 				B33977EA25C8E6D8004BE4AD /* TopAlbumsCoordinator.swift in Sources */,
+				B3CF468025CA3E9E00E43646 /* UIView+.swift in Sources */,
 				B33977BF25C8D0B6004BE4AD /* TopAlbumsService.swift in Sources */,
 				B3055BC425C8896600AAAA7C /* SceneDelegate.swift in Sources */,
 				B365366525C9F3F400EB66F5 /* GenreDTO.swift in Sources */,
@@ -416,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B382DDDE25CA27C8009C3682 /* TopAlbumsViewModelTests.swift in Sources */,
 				B3055BD925C8896700AAAA7C /* NikeChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

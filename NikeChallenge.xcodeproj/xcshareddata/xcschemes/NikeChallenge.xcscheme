@@ -37,13 +37,6 @@
             BlueprintName = "NikeChallenge"
             ReferencedContainer = "container:NikeChallenge.xcodeproj">
          </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3055BD325C8896700AAAA7C"
-            BuildableName = "NikeChallengeTests.xctest"
-            BlueprintName = "NikeChallengeTests"
-            ReferencedContainer = "container:NikeChallenge.xcodeproj">
-         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
